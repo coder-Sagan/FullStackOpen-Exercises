@@ -189,6 +189,16 @@ div[style*="border-style: solid"] {
   animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+/* Emphasize the "Numbers" Heading */
+h3:last-of-type {
+  font-size: 1.5rem; /* Slightly larger than the other heading */
+  color: #ffffff; /* Pure white to make it pop */
+  margin-top: 3.5rem; /* Extra breathing room from the add button above */
+  padding-bottom: 0.8rem;
+  border-bottom: 2px solid rgba(0, 212, 255, 0.5); /* Thicker, neon-blue glowing underline */
+  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.2); /* Subtle glow on the text itself */
+}
+
 @keyframes popIn {
   from { opacity: 0; transform: scale(0.8) translateY(-20px); }
   to { opacity: 1; transform: scale(1) translateY(0); }
