@@ -1,0 +1,195 @@
+/* 1. Import 'Outfit', a very modern, geometric, vibrant font */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
+
+/* 2. The Animated Mesh Gradient Background */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  /* A vibrant mix of neon sunset and cyber-blue */
+  background: linear-gradient(-45deg, #ff0076, #590fb7, #00d4ff, #ff7b00);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 3rem 1.5rem;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* 3. The Glassmorphism App Container */
+#root > div {
+  /* Semi-transparent dark background for the frosted glass look */
+  background: rgba(15, 15, 25, 0.4); 
+  backdrop-filter: blur(24px); /* The magic blur effect */
+  -webkit-backdrop-filter: blur(24px);
+  width: 100%;
+  max-width: 480px;
+  padding: 2.5rem;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.15); /* Shiny glass edge */
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* 4. Vibrant Typography */
+h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  /* Glowing text gradient for the main title */
+  background: linear-gradient(to right, #00f2fe, #4facfe);
+  -webkit-background-clip: text; 
+  background-clip: text; 
+  color: transparent;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  letter-spacing: -1px;
+  filter: drop-shadow(0 2px 10px rgba(0, 242, 254, 0.3));
+}
+
+h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 5. Glassy Inputs */
+form > div {
+  margin-bottom: 1.2rem;
+  font-weight: 400;
+  color: #cbd5e1;
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  width: 100%;
+  padding: 14px 16px;
+  margin-top: 8px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+/* Focus state makes the input glow with the theme */
+input:focus {
+  outline: none;
+  background: rgba(0, 0, 0, 0.4);
+  border-color: #00d4ff;
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+}
+
+/* Placeholder color so it doesn't clash */
+input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* 6. Vibrant Buttons */
+button {
+  background: linear-gradient(135deg, #590fb7 0%, #00d4ff 100%);
+  color: white;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-family: inherit;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 8px 20px rgba(0, 212, 255, 0.3);
+}
+
+button:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 15px 25px rgba(0, 212, 255, 0.5);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+form button {
+  width: 100%;
+  margin-top: 15px;
+}
+
+/* 7. The Person List */
+h3:last-of-type + div {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+h3:last-of-type + div > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  font-weight: 300;
+  color: #f8fafc;
+  transition: all 0.3s ease;
+}
+
+h3:last-of-type + div > div:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateX(5px); /* Slides the card slightly right on hover */
+}
+
+/* Delete Button - Vibrant Neon Red/Pink (FIXED FOR CONTRAST) */
+h3:last-of-type + div > div button {
+  background: rgba(255, 0, 118, 0.25); /* Slightly more visible resting background */
+  color: #ffd1e3; /* Bright, soft pastel pink so it pops against the dark glass */
+  border: 1px solid rgba(255, 0, 118, 0.6); /* Stronger neon edge */
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: none;
+}
+
+h3:last-of-type + div > div button:hover {
+  background: #ff0076;
+  color: #ffffff; /* Turns pure crisp white on hover */
+  box-shadow: 0 4px 15px rgba(255, 0, 118, 0.6);
+  border-color: transparent;
+  transform: scale(1.05);
+}
+
+/* 8. Notification Override Hack */
+div[style*="border-style: solid"] {
+  background: rgba(15, 15, 25, 0.8) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 16px !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  text-align: center !important;
+  padding: 16px !important;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5) !important;
+  animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.8) translateY(-20px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
