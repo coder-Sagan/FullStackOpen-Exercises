@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import personService from './services/persons'
 
+import { useAutoAnimate } from '@formkit/auto-animate/react'
+
 const Notification = ({notification}) => {
   if(notification.text === null) return null
   const notifStyle = {
@@ -53,8 +55,9 @@ const Person = ({ person, deletePerson }) => {
 }
 
 const Persons = ({ filteredPersons, handleDelete }) => {
+  const [animationParent] = useAutoAnimate()
   return (
-    <div>
+    <div ref={animationParent}>
       {filteredPersons.map(person => (
         <Person key={person.name} person={person} deletePerson={()=>handleDelete(person)} />
       ))}
