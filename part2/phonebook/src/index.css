@@ -64,6 +64,13 @@ h3 {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Update the color in this existing block */
+h3:last-of-type + div > div {
+  /* ... your other properties ... */
+  color: #ffffff; /* <-- Make sure this is bright white! */
+  font-weight: 400; /* Maybe bump the weight slightly if it's too thin */
+}
+
 /* 5. Glassy Inputs */
 form > div {
   margin-bottom: 1.2rem;
